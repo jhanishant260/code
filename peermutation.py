@@ -5,8 +5,8 @@ low=0
 length=len(a)
 d=set()
 def permute(a,length,low,high):
-
-    d.add(str(a))
+    
+    d.add(''.join(a))
     print("inside permute")
     print(a)
     if low==length:
@@ -22,8 +22,10 @@ def permute(a,length,low,high):
             a[low],a[i]=a[i],a[low]
             permute(a,length,low+1,high)
             print("after permute")
+
             print(a)
             a[i],a[low]=a[low],a[i]
 permute(a,length,low,high)
+
+d=list(d)
 print(d)
-print(len(d))
